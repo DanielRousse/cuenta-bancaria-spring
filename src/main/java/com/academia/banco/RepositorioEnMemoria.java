@@ -6,7 +6,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+import org.springframework.stereotype.Component;
+
 /** Las cuentas viven en un Map, en memoria: al terminar el programa se pierden. */
+@Component
 public class RepositorioEnMemoria implements RepositorioCuentas {
 
     private final Map<String, CuentaBancaria> cuentas = new HashMap<>();
