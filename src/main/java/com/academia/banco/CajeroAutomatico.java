@@ -23,6 +23,7 @@ import java.time.LocalDate;
  * C7. Si el SMS falla, el retiro YA se hizo y NO se deshace: el cajero no lanza ninguna excepción.
  * C8. Si el repositorio no responde (ServicioNoDisponibleException), esa excepción sale tal cual.
  */
+// MP-1: hoy sus piezas son reales
 public class CajeroAutomatico {
 
     public static final BigDecimal LIMITE_DIARIO = new BigDecimal("8000.00");
