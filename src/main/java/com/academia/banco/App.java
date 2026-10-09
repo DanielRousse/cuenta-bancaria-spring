@@ -23,6 +23,14 @@ public class App {
             System.out.println("Saldo de la 001: $" + cajero.consultarSaldo("001"));
             cajero.retirar("001", new BigDecimal("500.00"));
             System.out.println("Saldo de la 001: $" + cajero.consultarSaldo("001"));
+
+            System.out.println("Retiro de $2000.00:");
+            try {
+                cajero.retirar("001", new BigDecimal("2000.00"));
+            } catch (RuntimeException e) {
+                System.out.println("   Rechazado: " + e.getMessage());
+            }
+            System.out.println("Saldo de la 001: $" + cajero.consultarSaldo("001"));
         }
     }
 }
