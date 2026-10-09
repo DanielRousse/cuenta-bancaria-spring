@@ -1,0 +1,18 @@
+Piezas (beans) que creó Spring:
+   configuracionBanco
+   antifraudeEstricto
+   antifraudePorMonto
+   cajeroAutomatico
+   notificadorConsola
+   repositorioEnMemoria
+   sesionCajero
+   reloj
+   (se creó la sesión #1)
+Sesión #1: retiro de $500.00 de la cuenta 001
+   [SMS a la cuenta 001] Retiro de $500.00. Saldo: $9500.00
+   (se creó la sesión #2)
+Sesión #2: retiro de $2000.00 de la cuenta 001
+   Rechazado: Operación rechazada: operación sospechosa
+¿Ana y Luis tienen la misma sesión?  false
+¿Y el mismo cajero?                 true
+Saldo final de la 001: $9500.00

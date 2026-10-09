@@ -1,6 +1,5 @@
 package com.academia.banco;
 
-import java.math.BigDecimal;
 import java.util.Arrays;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -19,18 +18,14 @@ public class App {
             RepositorioEnMemoria repositorio = contexto.getBean(RepositorioEnMemoria.class);
             repositorio.abrir("001", "Ana", "10000.00");
 
-            CajeroAutomatico cajero = contexto.getBean(CajeroAutomatico.class);
-            System.out.println("Saldo de la 001: $" + cajero.consultarSaldo("001"));
-            cajero.retirar("001", new BigDecimal("500.00"));
-            System.out.println("Saldo de la 001: $" + cajero.consultarSaldo("001"));
+            SesionCajero ana = contexto.getBean(SesionCajero.class);
+            ana.retirar("001", "500.00");
+            SesionCajero luis = contexto.getBean(SesionCajero.class);
+            luis.retirar("001", "2000.00");
 
-            System.out.println("Retiro de $2000.00:");
-            try {
-                cajero.retirar("001", new BigDecimal("2000.00"));
-            } catch (RuntimeException e) {
-                System.out.println("   Rechazado: " + e.getMessage());
-            }
-            System.out.println("Saldo de la 001: $" + cajero.consultarSaldo("001"));
+            System.out.println("¿Ana y Luis tienen la misma sesión?  " + (ana == luis));
+            System.out.println("¿Y el mismo cajero?                 " + (ana.getCajero() == luis.getCajero()));
+            System.out.println("Saldo final de la 001: $" + contexto.getBean(CajeroAutomatico.class).consultarSaldo("001"));
         }
     }
 }
