@@ -1,0 +1,10 @@
+Piezas (beans) que creó Spring:
+   configuracionBanco
+   repositorio
+   antifraude
+   notificador
+   reloj
+   cajero
+Saldo de la 001: $10000.00
+   [SMS a la cuenta 001] Retiro de $500.00. Saldo: $9500.00
+Saldo de la 001: $9500.00
