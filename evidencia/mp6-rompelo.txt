@@ -1,0 +1,77 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< com.academia:cuenta-bancaria-spring >-----------------
+[INFO] Building cuenta-bancaria-spring 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ cuenta-bancaria-spring ---
+[INFO] skip non existing resourceDirectory /home/lenovo/cuenta-bancaria-spring/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ cuenta-bancaria-spring ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 22 source files with javac [debug release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ cuenta-bancaria-spring ---
+[INFO] skip non existing resourceDirectory /home/lenovo/cuenta-bancaria-spring/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ cuenta-bancaria-spring ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 2 source files with javac [debug release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ cuenta-bancaria-spring ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] +--com.academia.banco.CajeroConMockitoBeanTest - 1.358 s
+[INFO] |  '-- [OK] elRetiroAvisaPorSms - 0.085 s
+[INFO] +--com.academia.banco.CajeroConSpringTest - 0.111 s
+[INFO] |  +-- [XX] elCajeroUsaElAntifraudeEstricto - 0.019 s
+[INFO] |  +-- [OK] retiroConLasPiezasReales - 0.005 s
+[INFO] |  +-- [OK] singletonYPrototype - 0.007 s
+[INFO] |  '-- [OK] quienNoPideNombreRecibeElPrimary - 0.004 s
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   CajeroConSpringTest.elCajeroUsaElAntifraudeEstricto:39 Expected com.academia.banco.OperacionRechazadaException to be thrown, but nothing was thrown.
+[INFO] 
+[ERROR] Tests run: 5, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.408 s
+[INFO] Finished at: 2026-10-09T12:20:17-06:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test) on project cuenta-bancaria-spring: There are test failures.
+[ERROR] 
+[ERROR] See /home/lenovo/cuenta-bancaria-spring/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+
+===== DETALLE de cada clase con fallas (target/surefire-reports) =====
+-------------------------------------------------------------------------------
+Test set: com.academia.banco.CajeroConSpringTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.111 s <<< FAILURE! -- in com.academia.banco.CajeroConSpringTest
+com.academia.banco.CajeroConSpringTest.elCajeroUsaElAntifraudeEstricto -- Time elapsed: 0.019 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected com.academia.banco.OperacionRechazadaException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:159)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:74)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3223)
+	at com.academia.banco.CajeroConSpringTest.elCajeroUsaElAntifraudeEstricto(CajeroConSpringTest.java:39)
+
+com.academia.banco.CajeroConSpringTest.retiroConLasPiezasReales -- Time elapsed: 0.005 s
+com.academia.banco.CajeroConSpringTest.singletonYPrototype -- Time elapsed: 0.007 s
+com.academia.banco.CajeroConSpringTest.quienNoPideNombreRecibeElPrimary -- Time elapsed: 0.004 s
